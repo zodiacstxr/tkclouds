@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+ 
+<div class="text-center">
+    <h1>Login</h1>
+</div>
+    
+<section class="section-background">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xs-12">
+                <div class="form">
+                <!-- -->
+                {% if error != '' %}
+                	<div class="alert alert-danger" role="alert"> 
+                		<i class="fa fa-exclamation" aria-hidden="true"></i> Incorrect email or password
+                	</div>
+                {% endif %}
+                <form method="post" action="">
+  					<div class="form-group">
+    					<label for="exampleInputEmail1">Email</label>
+    					<input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+  					</div>
+  					<div class="form-group">
+    					<label for="exampleInputPassword1">Password</label>
+    					<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+  					</div>
+  					<button type="submit" class="btn btn-default">Login</button>
+				</form>
+                <!-- -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

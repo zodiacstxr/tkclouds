@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="text-center">
+    <h1>Home</h1>
+</div>
+<section class="section-background">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+            	<ul class="nav">
+                    <li><a href="index.php">Home</a></li>
+                    {% if session.member_id == '' %} 
+                    <li><a href="login.php">Login</a></li> 
+                    {% endif %}
+                    {% if session.member_id != '' %}
+                    <li><a href="file_list.php">Files</a></li>
+                    <li><a href="file_share.php">File shares</a></li>
+                    <li><a href="logout.php">Logout</a></li> 
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
